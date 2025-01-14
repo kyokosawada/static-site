@@ -13,11 +13,26 @@ def main():
 
     html = HTMLNode("href", "value", "children", props)
     print(repr(html))
-    """
+    
 
     leaf = LeafNode("a", "Click me!", {"href": "https://www.google.com"})
 
     print(leaf.to_html())
+
+    """
+
+    parent = ParentNode(
+        "p",
+        [
+            LeafNode("b", "Bold text"),
+            LeafNode(None, "Normal text"),
+            LeafNode("i", "italic text"),
+            LeafNode(None, "Normal text"),
+        ],
+    )
+
+    # print(parent.to_html())
+    print(repr(parent))
 
 
 if __name__ == "__main__":
