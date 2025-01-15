@@ -1,5 +1,6 @@
 from htmlnode import *
 from textnode import *
+from split_delimiter import *
 
 
 def main():
@@ -19,7 +20,7 @@ def main():
 
     print(leaf.to_html())
 
-    """
+    
 
     parent = ParentNode(
         "p",
@@ -33,6 +34,13 @@ def main():
 
     # print(parent.to_html())
     print(repr(parent))
+
+    """
+
+    node = TextNode("**bold** and *italic*", TextType.TEXT)
+    result = split_nodes_delimiter([node], "**", TextType.BOLD)
+    result = split_nodes_delimiter(result, "*", TextType.ITALIC)
+    print(result)
 
 
 if __name__ == "__main__":
